@@ -1,5 +1,5 @@
 import java.rmi.RemoteException;
 
-public interface Clothing extends Product {
+public interface Equipment extends Product {
     String getSize() throws RemoteException;
 }

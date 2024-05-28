@@ -1,5 +1,5 @@
 import java.rmi.RemoteException;
 
-public interface Electronics extends Product {
+public interface Grenade extends Product {
     String getWarranty() throws RemoteException;
 }

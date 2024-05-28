@@ -1,5 +1,6 @@
 import java.rmi.RemoteException;
 
-public interface Clothing extends Product {
+// !! multi level from product
+public interface Equipment extends Product {
     String getSize() throws RemoteException;
 }

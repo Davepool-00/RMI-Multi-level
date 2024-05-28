@@ -5,14 +5,15 @@ import java.util.List;
 
 public class Client {
 
-    public static void viewProducts(Registry registry) throws Exception {
+    // !! used for casee 1
+    public static void viewProducts(Registry registry) throws Exception { //?? checks in the products
         Product[] products = {
             (Product) registry.lookup("Ak-47"),
             (Product) registry.lookup("M249"),
             (Product) registry.lookup("P90"),
             (Product) registry.lookup("P2000"),
-            (Product) registry.lookup("Laptop"),
-            (Product) registry.lookup("T-Shirt")
+            (Product) registry.lookup("Frag-grenade"),
+            (Product) registry.lookup("Ghillie-suit")
         };
 
         for (Product product : products) {
@@ -20,10 +21,10 @@ public class Client {
             System.out.println("Price: " + product.Getprice());
             System.out.println("Description: " + product.Getdesc());
 
-            if (product instanceof Electronics) {
-                System.out.println("Warranty: " + ((Electronics) product).getWarranty());
-            } else if (product instanceof Clothing) {
-                System.out.println("Size: " + ((Clothing) product).getSize());
+            if (product instanceof Grenade) {
+                System.out.println("Warranty: " + ((Grenade) product).getWarranty());
+            } else if (product instanceof Equipment) {
+                System.out.println("Size: " + ((Equipment) product).getSize());
             }
 
             System.out.println();
@@ -53,10 +54,10 @@ public class Client {
                 System.out.println("Price: " + product.Getprice());
                 System.out.println("Description: " + product.Getdesc());
 
-                if (product instanceof Electronics) {
-                    System.out.println("Warranty: " + ((Electronics) product).getWarranty());
-                } else if (product instanceof Clothing) {
-                    System.out.println("Size: " + ((Clothing) product).getSize());
+                if (product instanceof Grenade) {
+                    System.out.println("Warranty: " + ((Grenade) product).getWarranty());
+                } else if (product instanceof Equipment) {
+                    System.out.println("Size: " + ((Equipment) product).getSize());
                 }
 
                 System.out.println();

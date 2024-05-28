@@ -10,8 +10,8 @@ public class Server {
             (Product) registry.lookup("M249"),
             (Product) registry.lookup("P90"),
             (Product) registry.lookup("P2000"),
-            (Product) registry.lookup("Laptop"),
-            (Product) registry.lookup("T-Shirt")
+            (Product) registry.lookup("Frag-grenade"),
+            (Product) registry.lookup("Ghillie-suit")
         };
 
         for (Product product : products) {
@@ -19,10 +19,10 @@ public class Server {
             System.out.println("Price: " + product.Getprice());
             System.out.println("Description: " + product.Getdesc());
 
-            if (product instanceof Electronics) {
-                System.out.println("Warranty: " + ((Electronics) product).getWarranty());
-            } else if (product instanceof Clothing) {
-                System.out.println("Size: " + ((Clothing) product).getSize());
+            if (product instanceof Grenade) {
+                System.out.println("Warranty: " + ((Grenade) product).getWarranty());
+            } else if (product instanceof Equipment) {
+                System.out.println("Size: " + ((Equipment) product).getSize());
             }
 
             System.out.println();
@@ -40,8 +40,8 @@ public class Server {
             ProductImp p2 = new ProductImp("M249", "Light-Machine Gun", 4087.0);
             ProductImp p3 = new ProductImp("P90", "Sub Machine Gun", 2350.0);
             ProductImp p4 = new ProductImp("P2000", "Semi-automatic Pistol", 560.47);
-            ElectronicsImp p5 = new ElectronicsImp("Laptop", "Electronics Device", 1200.0, "2 years");
-            ClothingImp p6 = new ClothingImp("T-Shirt", "Cotton T-Shirt", 20.0, "L");
+            GrenadeImp p5 = new GrenadeImp("Frag grenade", "Explosive", 1200.0, "5 years");
+            EquipmentImp p6 = new EquipmentImp("Ghillie suit", "Camouflage", 20.0, "Medium");
 
             Product stub1 = (Product) UnicastRemoteObject.exportObject(p1, 0);
             Product stub2 = (Product) UnicastRemoteObject.exportObject(p2, 0);
@@ -58,8 +58,8 @@ public class Server {
             registry.bind("M249", stub2);
             registry.bind("P90", stub3);
             registry.bind("P2000", stub4);
-            registry.bind("Laptop", stub5);
-            registry.bind("T-Shirt", stub6);
+            registry.bind("Frag-grenade", stub5);
+            registry.bind("Ghillie-suit", stub6);
 
             viewProducts(registry);
             System.out.println("Exporting and Binding done...");
